@@ -1,13 +1,14 @@
-function loginForm() {
 
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
+function loginSuccess() {
 
-    validateUser(username, password, loginSuccess);
+    window.location.href = "todo.html";
 
 }
 
-function validateUser(username, password, callback) {
+function loginForm(callback) {
+
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
 
     if (username === "admin" && password === "12345") {
         callback();
@@ -18,14 +19,10 @@ function validateUser(username, password, callback) {
 
 }
 
-function loginSuccess() {
-
-    window.location.href = "todo.html";
-
-}
 function logout() {
     window.location.href = "index.html";
 }
+
 if (window.location.pathname.includes("todo.html")) {
     loadTodos();
 }
